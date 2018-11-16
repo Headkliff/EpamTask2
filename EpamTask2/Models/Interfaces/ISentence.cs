@@ -2,7 +2,6 @@
 {
     public interface ISentence
     {
-        void AddElementToEnd(ISentenceElement element);
         int GetWordsCount();
         int GetElementsCount();
         ISentenceElement GetElementByIndex(int index);
