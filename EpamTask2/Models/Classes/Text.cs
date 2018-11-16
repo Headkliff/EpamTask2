@@ -52,11 +52,6 @@ namespace EpamTask2.Models.Classes
 
         }
 
-        public List<ISentence> GetSentences()
-        {
-            return _sentences;
-        }
-
         public void RemoveWords(int wordLenght)
         {
             foreach (var currentSentence in _sentences)
