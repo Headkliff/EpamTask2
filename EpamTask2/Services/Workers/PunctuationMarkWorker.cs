@@ -1,7 +1,7 @@
 ﻿using EpamTask2.Enums;
 using EpamTask2.Models.Interfaces;
 
-namespace EpamTask2.Serveces.Workers
+namespace EpamTask2.Services.Workers
 {
     public class PunctuationMarkWorker : IPunctuationMarkWorker
     {
@@ -9,10 +9,7 @@ namespace EpamTask2.Serveces.Workers
         {
             if (element.SentenceElementType == SentenceElementType.PunctuationMark)
             {
-                if (element.Value.Equals("?"))
-                {
-                    return true;
-                }
+                if (element.Value.Equals("?")) return true;
 
                 return false;
             }

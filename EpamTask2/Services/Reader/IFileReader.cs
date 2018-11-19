@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EpamTask2.Serveces.Reader
+namespace EpamTask2.Services.Reader
 {
     public interface IFileReader
     {

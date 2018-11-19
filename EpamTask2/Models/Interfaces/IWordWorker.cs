@@ -4,6 +4,6 @@
     {
         int GetWordLength(ISentenceElement element);
         bool FirstLetterIsConsonant(ISentenceElement element);
-        void ReplaceValue(int wordLenght, ISentenceElement element, string newValue);
+        void ReplaceValue(int wordLength, ISentenceElement element, string newValue);
     }
 }

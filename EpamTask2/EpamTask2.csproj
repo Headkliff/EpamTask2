@@ -47,12 +47,12 @@
     <Compile Include="Models\Interfaces\IWordWorker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Serveces\Parser\IParser.cs" />
-    <Compile Include="Serveces\Parser\TextParser.cs" />
-    <Compile Include="Serveces\Reader\IFileReader.cs" />
-    <Compile Include="Serveces\Reader\TextReader.cs" />
-    <Compile Include="Serveces\Workers\PunctuationMarkWorker.cs" />
-    <Compile Include="Serveces\Workers\WordWorker.cs" />
+    <Compile Include="Services\Parser\IParser.cs" />
+    <Compile Include="Services\Parser\TextParser.cs" />
+    <Compile Include="Services\Reader\IFileReader.cs" />
+    <Compile Include="Services\Reader\TextReader.cs" />
+    <Compile Include="Services\Workers\PunctuationMarkWorker.cs" />
+    <Compile Include="Services\Workers\WordWorker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

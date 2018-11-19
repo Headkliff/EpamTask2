@@ -1,42 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using EpamTask2.Models.Classes;
-using EpamTask2.Serveces.Parser;
-using EpamTask2.Serveces.Reader;
+using EpamTask2.Services.Parser;
+using EpamTask2.Services.Reader;
 
 namespace EpamTask2
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            string line = "=============================================================";
+            var line = "=============================================================";
             IFileReader r = new TextReader("input.txt");
-            List<string> listSentences = new List<string>();
+            var listSentences = new List<string>();
             IParser<Text> parser = new TextParser();
             listSentences = r.Read();
             var text = parser.Parse(listSentences);
 
             ///1 Вывести все предложения заданного текста в порядке возрастания количества слов в каждом из них.
-            foreach (var item in text.SortSentences())
-            {
-                Console.WriteLine(item);
-            }
+            foreach (var item in text.SortSentences()) Console.WriteLine(item);
             Console.WriteLine(line);
 
             ///2 Во всех вопросительных предложениях текста найти и напечатать без повторений слова заданной длины.
-            text.FindWordsOfPredeterminedLenght(text, wordLenght: 7);
+            var result = text.FindWordsOByLength(text, wordLength:3);
+            foreach (var item in result) Console.WriteLine(item);
             Console.WriteLine(line);
 
             ///3 Из текста удалить все слова заданной длины, начинающиеся на согласную букву.
-            text.RemoveWords(7);
+            text.RemoveWords(wordLength:3);
             Console.WriteLine(text);
             Console.WriteLine(line);
 
             ///4 В некотором предложении текста слова заданной длины заменить указанной подстрокой, 
             ///длина которой может не совпадать с длиной слова.
-            
-            text.ReplaceWords(indexSentense: 0,wordLenght: 3, newValue: "I love programming on C#");
+
+            text.ReplaceWords(indexSentense:0, wordLength:3, newValue:"I love programming on C#");
             Console.WriteLine(text);
             Console.WriteLine(line);
 

@@ -5,7 +5,7 @@
         int GetWordsCount();
         int GetElementsCount();
         ISentenceElement GetElementByIndex(int index);
-        void DeleteWords(int wordLenght);
-        void ReplaceWords(int wordLenght, string newValue);
+        void DeleteWords(int wordLength);
+        void ReplaceWords(int wordLength, string newValue);
     }
 }

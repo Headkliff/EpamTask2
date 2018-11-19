@@ -2,25 +2,22 @@
 using EpamTask2.Enums;
 using EpamTask2.Models.Interfaces;
 
-namespace EpamTask2.Serveces.Workers
+namespace EpamTask2.Services.Workers
 {
     public class WordWorker : IWordWorker
     {
-
         public int GetWordLength(ISentenceElement element)
-        { 
+        {
             return element.Value.Length;
         }
 
         public bool FirstLetterIsConsonant(ISentenceElement element)
         {
-            string pattern = @"[aeiou]";
+            var pattern = @"[aeiou]";
             if (element.SentenceElementType == SentenceElementType.Word)
             {
-                if (!string.IsNullOrEmpty(element.Value) && !(Regex.Matches(element.Value[0].ToString(), pattern).Count > 0))
-                {
-                    return true;
-                }
+                if (!string.IsNullOrEmpty(element.Value) &&
+                    !(Regex.Matches(element.Value[0].ToString(), pattern).Count > 0)) return true;
 
                 return false;
             }
@@ -28,13 +25,10 @@ namespace EpamTask2.Serveces.Workers
             return false;
         }
 
-        public void ReplaceValue(int wordLenght, ISentenceElement element, string newValue)
+        public void ReplaceValue(int wordLength, ISentenceElement element, string newValue)
         {
-            if (element.SentenceElementType == SentenceElementType.Word && GetWordLength(element) == wordLenght)
-            {
+            if (element.SentenceElementType == SentenceElementType.Word && GetWordLength(element) == wordLength)
                 element.Value = newValue;
-            }
         }
-
     }
 }

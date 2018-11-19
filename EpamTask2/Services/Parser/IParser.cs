@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace EpamTask2.Serveces.Parser
+namespace EpamTask2.Services.Parser
 {
-    public interface IParser <T>
+    public interface IParser<T>
     {
         T Parse(List<string> str);
     }
